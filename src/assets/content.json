@@ -1,0 +1,55 @@
+
+{
+   "projets": [
+ 
+    {
+      "name": "Ouragan katrina",
+      "city": "Louisiane",
+      "date": "Août 2005",
+      "description": "Cette ouragan est l’un des plus puissant et plus étendu jamais enregistré. Katrina a fait plus de 1836 victimes dans tous le sud des États-Unis. Il a causé des inondations importantes et désolé complètement le sud de la côte est. Les autorités ont même essayé de faire évacuer les grandes villes côtières comme La Nouvelle-Orléan sans succès.",
+      "bg": "images/katrinaoriginal.jpg",
+      "bg_next": "images/katrina.jpg"
+
+    },
+    {
+    "name": "Tornades Oklahoma",
+    "city": "Kansas Oklahoma Arkansas Tennessee",
+    "date": "3 mai 1999",
+    "description": "Les tornades de l’Oklahoma fut un des épisodes les plus destructeur des états-unis. Au total, plus de 66 tornades se sont formé le même jour dans les états du Kansas, de l’Arkansas, du Tennessee et bien sûr dans l’oklahoma ou les tornades fut les plus dévastatrice.",
+    "bg": "images/villeoriginal.jpg",
+    "bg_next": "images/ville.jpg"
+    },
+    {
+      "name": "Séisme de Sumatra",
+      "city": "Océan Indien",
+      "date": "26 décembre 2004",
+      "description": "Ce séisme est le 3ème plus gros jamais enregistré.  Il est le plus grave jamais enregistré avec un bilan estimé à 250 000 mort. Le séisme de Sumatra était tellement puissant qu’il c’est fait ressentir jusqu’en Inde et jusqu’aux côtes Africaine bordant l’Océan Indien. Un tsunami à suivi, touchant la plupart des côte de l’océan Indien.",
+      "bg": "images/sumatraoriginal.jpg",
+      "bg_next": "images/sumatra.jpg"
+    },
+    {
+      "name": "Typhon Mangkhut",
+      "city": "Philippine et sud Chine (Hong Kong)",
+      "date": "Septembre 2018",
+      "description": "C’est un puissant typhon tropical qui à toucher les Philippines et Hong Kong. C’est le premier depuis 2016 qui rentre autant dans les terres pour aller toucher le sud de la Chine. Ce typhon est même monté en puissance 5 à son approche de Taïwan avec des vents s’approchant des 285 km/h.",
+      "bg": "images/tornadooriginal.jpg",
+      "bg_next": "images/tornado.jpg"
+    },
+    {
+      "name": "Tsunami Tohoku",
+      "city": "Côte nord de Tokyo",
+      "date": "11 mars 2011",
+      "description": "Le Tsunami Tohoku est un des plus dévastateur pour l’environnement puisqu’il a frappé la centrale de Fukushima. C’est un des plus dévastateur au niveau environnementale pour le japon et ses côtes. Il a été causé par un séisme de magnitude 9 et a déclenché des vagues estimé à 20 - 30 mètre. La zone entourant la station de Fukushima a été classé interdit à la population à cause de sa radioactivité suite à l’accident. Il aura fait 18 457 mort sur les côtes japonaise sans compter les victimes de la radioactivité.",
+      "bg": "images/tokyooriginal.jpg",
+      "bg_next": "images/tokyo.jpg"
+    },
+    {
+      "name": "Séisme Ombrie",
+      "city": "Région des Marches et l’Ombrie",
+      "date": "26 octobre 2018",
+      "description": "C’est un des plus grand en Italie depuis plus de 100 ans. Le séisme avait une puissance de 6,1 et à eux lieux dans le centre de L’italie. C’est même le premier séisme partant de la région d’Ombre qui arrive à toucher Rome. Heureusement un premier plus petit séisme est arrivé deux heure avant et à permis d’alerter la population qui a pu évacuer la zone touché. Au total, sur la soirée la zone à été touché par 8 séismes de différentes magnitude.",
+      "bg": "images/pontoriginal.jpg",
+      "bg_next": "images/pont.jpg"
+    }
+   ]
+ }

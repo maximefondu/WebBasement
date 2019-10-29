@@ -1,0 +1,352 @@
+.header{
+   width: 100%;
+   height: 100vh;
+   position: relative;
+   display: flex;
+   z-index: 20;
+   background-repeat: no-repeat;
+   background-size: cover;
+   flex-direction: column-reverse;
+   justify-content: center;
+   align-items: center;
+
+--color-text: #fff;
+--color-bg: #000;
+--color-link: #f9d77e;
+--color-link-hover: #fff;
+--color-info: #efc453;
+--glitch-width: 100vw;
+--glitch-height: 100vh;
+--gap-horizontal: 10px;
+--gap-vertical: 5px;
+--time-anim: 4s;
+--delay-anim: 2s;
+--blend-mode-1: none;
+--blend-mode-2: none;
+--blend-mode-3: none;
+--blend-mode-4: none;
+--blend-mode-5: overlay;
+--blend-color-1: transparent;
+--blend-color-2: transparent;
+--blend-color-3: transparent;
+--blend-color-4: transparent;
+--blend-color-5: #000;
+
+
+   &__bgContent{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+	   height: 100%;
+      overflow: hidden;
+      z-index: -5;
+   }
+
+   &__bgEl{
+      position: absolute;
+      top: calc(-1 * var(--gap-vertical));
+      left: calc(-1 * var(--gap-horizontal));
+      width: calc(100% + var(--gap-horizontal) * 2);
+      height: calc(100% + var(--gap-vertical) * 2);
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: translate3d(0,0,0);
+      background-blend-mode: var(--blend-mode-1);
+   }
+
+   &--actived{
+      .header{
+         &__bgEl{
+            &:nth-child(n+2) {
+               opacity: 0;
+            }
+            
+            &:nth-child(n+2) {
+               animation-duration: var(--time-anim);
+               animation-delay: var(--delay-anim);
+               animation-timing-function: linear;
+               animation-duration: 5s;
+               animation-iteration-count: infinite;
+            }
+            
+            &:nth-child(2) {
+               background-color: var(--blend-color-2);
+               background-blend-mode: var(--blend-mode-2);
+               animation-name: glitch-anim-1;
+            }
+            
+            &:nth-child(3) {
+               background-color: var(--blend-color-3);
+               background-blend-mode: var(--blend-mode-3);
+               animation-name: glitch-anim-2;
+            }
+            
+            &:nth-child(4) {
+               background-color: var(--blend-color-4);
+               background-blend-mode: var(--blend-mode-4);
+               animation-name: glitch-anim-3;
+            }
+            
+            &:nth-child(5) {
+               background-color: var(--blend-color-5);
+               background-blend-mode: var(--blend-mode-5);
+               animation-name: glitch-anim-flash;
+            }
+         }
+         &__content{
+            .title:after{
+               content:attr(data-text);
+               position:absolute;
+               left:2px;
+               text-shadow:-1px 0 red;
+               top:0;
+               color:#fff;
+               background:transparent;
+               overflow:hidden;
+               clip:rect(0,900px,0,0); 
+               animation:glitch 2s infinite linear alternate-reverse;
+            }
+            .title:before{
+               content:attr(data-text);
+               position:absolute;
+               left:-2px;
+               text-shadow:1px 0 blue; 
+               top:0;
+               color:#fff;
+               background:transparent;
+               overflow:hidden;
+               clip:rect(0,900px,0,0); 
+               animation:glitch-2 3s infinite linear alternate-reverse;
+            }
+         }
+
+         &__date{
+            position:relative;
+            &:after{
+               content:attr(data-text);
+               position:absolute;
+               left:2px;
+               text-shadow:-1px 0 red;
+               top:0;
+               color:#fff;
+               background:transparent;
+               overflow:hidden;
+               clip:rect(0,900px,0,0); 
+               animation:glitch 2s infinite linear alternate-reverse;
+            }
+             
+            &:before{
+            content:attr(data-text);
+            position:absolute;
+            left:-2px;
+            text-shadow:1px 0 blue; 
+            top:0;
+            color:#fff;
+            background:transparent;
+            overflow:hidden;
+            clip:rect(0,900px,0,0); 
+            animation:glitch-2 3s infinite linear alternate-reverse;
+            }
+         }
+
+         &__city{
+            position:relative;
+            &:after{
+               content:attr(data-text);
+               position:absolute;
+               left:2px;
+               text-shadow:-1px 0 red;
+               top:0;
+               color:#fff;
+               background:transparent;
+               overflow:hidden;
+               clip:rect(0,900px,0,0); 
+               animation:glitch 2s infinite linear alternate-reverse;
+            }
+             
+            &:before{
+            content:attr(data-text);
+            position:absolute;
+            left:-2px;
+            text-shadow:1px 0 blue; 
+            top:0;
+            color:#fff;
+            background:transparent;
+            overflow:hidden;
+            clip:rect(0,900px,0,0); 
+            animation:glitch-2 3s infinite linear alternate-reverse;
+            }
+         }
+      }
+   }
+
+
+   &__title{
+      display: none;
+   }
+
+   &__dateBlock{
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      bottom: 32px;
+      right: 32px;
+   }
+
+   &__date{
+      animation: txtSlide 1.2s;
+      animation-fill-mode: forwards;
+
+      &--an{
+         animation: txtSlideout 1.2s;
+         animation-fill-mode: forwards;
+      }
+   }
+
+   &__city{
+      margin-right: 6px;
+      animation: txtSlide 1s;
+      animation-fill-mode: forwards;
+
+      &:after{
+         content: ' | ';
+         margin-left: 6px;
+      }
+
+      &--an{
+         animation: txtSlideout 1s;
+         animation-fill-mode: forwards;
+      }
+   }
+
+   &__logo{
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      margin: 0;
+      overflow: hidden;
+      width: 100px;
+   }
+
+   &__span{
+      display: block;
+      overflow: hidden;
+   }
+
+   &__spanTitle{
+      display: block;
+      overflow: hidden;
+      position: relative;
+   }
+
+   &__content{
+   }
+
+   &__copy{
+      display: none;
+
+      @include small{
+         position: absolute;
+         bottom: 32px;
+         left: 32px;
+      } 
+   }
+
+   &__sound{
+      padding: 0;
+      width: 30px;
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      color: #fff;
+      width: fit-content;
+      font-family:'PT Sans' ,sans-serif;
+      font-weight: 400;
+      cursor: pointer;
+   }
+
+   &__btn{
+      border: 2px #fff solid;
+      background-color: transparent;
+      padding: 12px 22px;
+      color: #fff;
+      border-radius: 26px;
+      outline: none;
+      display: block;
+      margin: 0 auto;
+      margin-top: 32px;
+      cursor: pointer;
+      font-size: 16px;
+
+      &:hover{
+         background-color: #fff;
+         color: #000;
+      }
+   }
+
+   &__nav{
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: row;
+      height: fit-content;
+
+      @include small{
+         top: 50%;
+         left: 32px;
+         transform: translateY(-50%);
+         flex-direction: column;
+      } 
+   }
+
+
+   &__btnNav{
+      color: #fff;
+      outline: none;
+      background-color: transparent;
+      border: none;
+      font-size: 16px;
+      font-family:'PT Sans' ,sans-serif;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      line-height: 1;
+      margin: 22px 0;
+      cursor: pointer;
+
+      &:before{
+         content: '';
+         width: 5px;
+         height: 5px;
+         border-radius: 50%;
+         border: 2px solid #fff;
+         margin-right: 12px;
+      }
+
+      &:hover{
+         &:before{
+            background-color: #fff;
+         }
+      }
+   }
+
+
+   &__div{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+	   height: 100%;
+      overflow: hidden;
+      z-index: -5;
+      background-size: cover;
+      transition: all .3s ease-in-out;
+      animation: slider 1s;
+   }
+}

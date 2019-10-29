@@ -1,0 +1,104 @@
+body{
+  margin: 0;
+  background-color: #000;
+  padding: 32px;
+}
+
+
+
+// Stéphane Montlouis-Calixte
+.title{
+  color:white;
+  font: bold 32px Arial;
+  margin: 0;
+  cursor: pointer;
+  text-align: center;
+  animation:glitch 2s steps(100) infinite;
+  
+  &2{
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+    font: bold 32px Arial;
+  }
+
+}
+
+@keyframes glitch{
+  @include mini-glitch($r, $b, 1, 0, 10);
+  @include mini-glitch($r, $g, 0.5, 11, 20);  
+  @include mini-glitch($b, $g, 0.7, 21, 40);
+  
+  @include big-glitch($b, $g, 10, 41, 42);
+  
+  @include mini-glitch($r, $g, 0.5, 43, 50); 
+  @include mini-glitch($r, $b, 1, 51, 60);
+  
+  @include big-glitch($r, $g, 10, 61, 62); 
+  
+  @include mini-glitch($r, $b, 0.5, 63, 70);
+  
+  @include big-glitch($r, $b, 10, 71, 72);
+  
+  @include mini-glitch($r, $b, 1, 73, 80);
+  @include mini-glitch($r, $g, 0.5, 81, 90);
+
+  @include big-glitch($g, $b, 10, 91, 92);
+  
+  @include mini-glitch($b, $g, 0.7, 92, 100);
+}
+
+
+
+
+
+
+//3
+.glitch{
+  font-family: sans-serif;
+  color:white;
+  font-size:32px;
+  position:relative;
+}
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:2px;
+  text-shadow:-1px 0 red;
+  top:0;
+  color:white;
+  background:black;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:before{
+  content:attr(data-text);
+  position:absolute;
+  left:-2px;
+  text-shadow:1px 0 blue; 
+  top:0;
+  color:white;
+  background:black;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim-2 3s infinite linear alternate-reverse;
+}
